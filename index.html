@@ -1,0 +1,1189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Search</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            font-size: 24px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .question {
+            margin-bottom: 20px;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            background-color: #fefefe;
+        }
+
+        .question h2 {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        .question ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .question ul li {
+            margin-bottom: 5px;
+        }
+
+        .correct {
+            font-weight: bold;
+            color: green;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Quiz Search Ona Tili</h1>
+        <input type="text" id="search" placeholder="Search for a question..." oninput="filterQuestions()">
+        <div id="questions">
+            <div class="question">
+                <h2>1. O‘quvchilarni kasblar olamiga olib kirishda qaysi fan asosiy rol o‘ynaydi?</h2>
+                <ul>
+                    <li>A) Texnologiya fani;</li>
+                    <li>B) Fizika;</li>
+                    <li>V) Matematika;</li>
+                    <li>G) Musiqa;</li>
+                </ul>
+                <p class="correct">To'g'ri javob: A) Texnologiya fani;</p>
+            </div>
+            
+            <div class="question">
+                <h2>2. Texnologiya fanidarslari qaysi xususiyatlari bilan ajralib turadi?</h2>
+                <ul>
+                    <li>A) Bilish va yaratuvchanlik faoliyati;</li>
+                    <li>B) O‘quvchilarning bilish faoliyati bilan;</li>
+                    <li>V) O‘quvchilarning yaratuvchanlik faoliyati;</li>
+                    <li>G) Aktivlik faoliyati;</li>
+                </ul>
+                <p class="correct">To'g'ri javob: A) Bilish va yaratuvchanlik faoliyati;</p>
+            </div>
+            
+            <div class="question">
+                <h2>3. Txorjevskiy A.D. taxriridagi «Texnologiya fanini o`qitish metodikasi» o‘quv qo‘llanmasi necha qismdan iborat?</h2>
+                <ul>
+                    <li>A) 3 ta;</li>
+                    <li>B) 2 ta;</li>
+                    <li>V) 4 ta;</li>
+                    <li>G) 6 ta.</li>
+                </ul>
+                <p class="correct">To'g'ri javob: A) 3 ta;</p>
+            </div>
+            
+            <div class="question">
+                <h2>4. Texnologiya fani o‘qituvchisini tayyorlashda «Texnologiya fanini o`qitish metodikasi» fani qaysi maxsus fanlar jumlasiga kiradi?</h2>
+                <ul>
+                    <li>A) Maxsus, kasbiy;</li>
+                    <li>B) Umumta’lim;</li>
+                    <li>V) Umumkasbiy;</li>
+                    <li>G) amaliy, maxsus;</li>
+                </ul>
+                <p class="correct">To'g'ri javob: A) Maxsus, kasbiy;</p>
+            </div>
+            
+            <div class="question">
+                <h2>5. Texnologiya fanini o`qitish metodikasi fani pedagogika, psixologiya, slesarlik ishi fanlari bilan munosabati qanaqa?</h2>
+                <ul>
+                    <li>A) Ular bilan yaqin aloqada bo‘ladi;</li>
+                    <li>B) Takomillashtiradi, to‘ldiradi;</li>
+                    <li>V) Takrorlaydi, chuqurlashtiradi;</li>
+                    <li>G) Yordam beradi, o‘zgartiradi;</li>
+                </ul>
+                <p class="correct">To'g'ri javob: A) Ular bilan yaqin aloqada bo‘ladi;</p>
+            </div>
+            
+            <div class="question">
+                <h2>6. Texnologiya fani fani qaysi fanlar bilan ko‘proq uzviy aloqada bo‘ladi?</h2>
+                <ul>
+                    <li>A) Fizika, matematika, chizmachilik, biologiya, botanika, ximiya va x.k.;</li>
+                    <li>B) Adabiyot, tarix, chet tili, jismoniy tarbiya;</li>
+                    <li>V) geografiya, xuquqshunoslik, odobnoma;</li>
+                    <li>S) Adabiyot, tarix, jismoniy tarbiya, fizika;</li>
+                </ul>
+                <p class="correct">To'g'ri javob: A) Fizika, matematika, chizmachilik, biologiya, botanika, ximiya va x.k.;</p>
+            </div>
+            
+            <div class="question">
+                <h2>7. Texnologiya fanini o‘qitish metodikasining asosiy tadqiqot vazifalarini belgilang?</h2>
+                <ul>
+                    <li>A) Fanning tarbiyaviy vazifalarini ochib berish, mazmunini asoslash, tashkil etish, metodikasini asoslash;</li>
+                    <li>B) Tarbiyaviy, ta’limotni vazifalarni ochib berish, sinfdan tashqari ishlar mazmunini asoslash;</li>
+                    <li>V) O‘quv materiali mazmunini ilmiy asoslash;</li>
+                    <li>G) Sinfdan va maktabdan tashqari unumli ishlar mazmunini asoslash;</li>
+                </ul>
+                <p class="correct">To'g'ri javob: A) Fanning tarbiyaviy vazifalarini ochib berish, mazmunini asoslash, tashkil etish, metodikasini asoslash;</p>
+            </div>
+            
+            <div class="question">
+                <h2>8. Texnologiya fanini o‘qitish jarayonida o‘ziga xos ta’limiy vazifalarga nimalar kiradi?</h2>
+                <ul>
+                    <li>A) Metall va yog‘ochga ishlov beradigan turli asboblardan foydalanishni, xavfsizlik qoidalarini o‘rgatish;</li>
+                    <li>B) O‘quv materiali mazmunini asoslash;</li>
+                    <li>V) Maktabda sanitariya - gigienasi qoidalarini o‘rgatish;</li>
+                    <li>G) Qishloqda xo‘jaligida ishlatiladigan texnikalarni o‘rganish mazmuni;</li>
+                </ul>
+                <p class="correct">To'g'ri javob: A) Metall va yog‘ochga ishlov beradigan turli asboblardan foydalanishni, xavfsizlik qoidalarini o‘rgatish;</p>
+            </div>
+            
+            <div class="question">
+                <h2>9. Umum ta’lim maktablarida texnologiya fanini o‘qitish necha bosqichda bo‘ladi?</h2>
+                <ul>
+                    <li>A) Uch;</li>
+                    <li>B) Bir;</li>
+                    <li>V) Ikki;</li>
+                    <li>G) To‘rt;</li>
+                </ul>
+                <p class="correct">To'g'ri javob: A) Uch;</p>
+            </div>
+            
+            <div class="question">
+                <h2>10. Umumiy ta’lim maktablarida texnologiya fani darslari nechanchi sinflardan boshlab o‘tiladi?</h2>
+                <ul>
+                    <li>A) Birinchi;</li>
+                    <li>B) Ikkinchi;</li>
+                    <li>V) Uchinchi – to‘rtinchi;</li>
+                    <li>G) Beshinchi- ettinchi;</li>
+                </ul>
+                <p class="correct">To'g'ri javob: A) Birinchi;</p>
+            </div>
+            
+            <div class="question">
+                <h2>11. Necha xil mehnat turi mavjud va ular qanday?</h2>
+                <ul>
+                    <li>A) Aqliy, jismoniy, unumli, texnologik;</li>
+                    <li>B) Aqliy, jismoniy, politexnik, hunarmandchilik,;</li>
+                    <li>V) Aqliy unumli, unumsiz;</li>
+                    <li>G) Jismoniy , mahsulli, mahsulsiz;</li>
+                </ul>
+                <p class="correct">To'g'ri javob: A) Aqliy, jismoniy, unumli, texnologik;</p>
+            </div>
+            
+            <div class="question">
+                <h2>12. Mezon (kriteriy) larni aniqlash metodika fanining vazifasiga kiradimi?</h2>
+                <ul>
+                    <li>A) Kiradi;</li>
+                    <li>B) Kirmaydi;</li>
+                    <li>V) Kamroq kiradi;</li>
+                    <li>S) Aloqasi yo‘q;</li>
+                </ul>
+                <p class="correct">To'g'ri javob: A) Kiradi;</p>
+            </div>
+            
+            <div class="question">
+                <h2>13. Jismoniy mehnatga o‘quvchilarni unumli mehnatga katnashtirish yo‘li bilan erishiladimi?</h2>
+                <ul>
+                    <li>A) Ha;</li>
+                    <li>B) Yo‘q;</li>
+                    <li>V) Bo‘lishi mumkin;</li>
+                    <li>S) Mavhum;</li>
+                </ul>
+                <p class="correct">To'g'ri javob: A) Ha;</p>
+            </div>
+            
+            <div class="question">
+                <h2>14. Texnologiya fani jarayonini samarali tashkil etish qanday bo‘ladi?</h2>
+                <ul>
+                    <li>A) O‘qituvchi va o‘quvchi faoliyatini faollashtirish;</li>
+                    <li>B) O‘quvchi faoliyatini uyg‘unlashtirish;</li>
+                    <li>D) O‘qituvchi va o‘quvchi faoliyati, o‘quv ustasi faoliyati;</li>
+                    <li>G) O‘quv ustasi faoliyati;</li>
+                </ul>
+                <p class="correct">To'g'ri javob: A) O‘qituvchi va o‘quvchi faoliyatini faollashtirish;</p>
+            </div>
+            
+            <div class="question">
+                <h2>15. Texnologiya fanini tashkil etishda boshqa fanlar ma’lumotlaridan foydalanadimi?</h2>
+                <ul>
+                    <li>G) Foydalanadi;</li>
+                    <li>B) Takrorlaydi;</li>
+                    <li>V) Bir – biriga tugri kelmaydi;</li>
+                    <li>A) Foydalanmaydi;</li>
+                </ul>
+                <p class="correct">To'g'ri javob: A) Foydalanmaydi;</p>
+            </div>
+            
+            <div class="question">
+                <h2>16. Texnologiya fanini o`qitish metodikasi o‘quvchilar mexnatini haqqoniy baholash imkonini beradigan mezonlarni ishlab chiqadimi?</h2>
+                <ul>
+                    <li>A) Ishlab chiqadi va amalga qo‘llaydi;</li>
+                    <li>B) Pedagogika fani ishlab chiqadi;</li>
+                    <li>V) Psixologiya fani ishlab chiqadi;</li>
+                    <li>G) Umumta’lim fanlari ishlab chiqadi;</li>
+                </ul>
+                <p class="correct">To'g'ri javob: A) Ishlab chiqadi va amalga qo‘llaydi;</p>
+            </div>
+            
+            <div class="question">
+                <h2>17. Maktab o‘quv jarayonida o‘quvchilar mehnatini tashkil kilishning nechta shakllari mavjud?</h2>
+                <ul>
+                    <li>A) 3 ta;</li>
+                    <li>B) 2 ta;</li>
+                    <li>V) 1 ta;</li>
+                    <li>T) 4 ta;</li>
+                </ul>
+                <p class="correct">To'g'ri javob: A) 3 ta;</p>
+            </div>
+            
+            <div class="question">
+                <h2>18. Maktab o‘quv jarayonida o‘quvchilar ishini tashkil qilishning kaysi shakllari mavjud?</h2>
+                <ul>
+                    <li>A) YAlpi, zveno, yakka tartibda;</li>
+                    <li>B) Individual, yakka tartibda;</li>
+                    <li>V) Brigada, yakka tartibda, zveno;</li>
+                    <li>G) Guruhga bo‘lib ishlash tartibida;</li>
+                </ul>
+                <p class="correct">To'g'ri javob: A) YAlpi, zveno, yakka tartibda;</p>
+            </div>
+            
+            <div class="question">
+                <h2>19. Texnologiya fanini o‘qitish metodikasi ko‘proq qaysi ilmiy tadqiqot metodlariga asoslanadi?</h2>
+                <ul>
+                    <li>A) Kuzatish, nazariy, ilg‘or pedagogik tajribalarni o‘rganish va umumlashtirish;</li>
+                    <li>B) Ilg‘or pedagogik tajribalarni o‘rganish;</li>
+                    <li>V) Kuzatish, tajriba sinov;</li>
+                    <li>G) eksperiment, nazariy tadqiqot;</li>
+                </ul>
+                <p class="correct">To'g'ri javob: A) Kuzatish, nazariy, ilg‘or pedagogik tajribalarni o‘rganish va umumlashtirish;</p>
+            </div>
+            
+            <div class="question">
+                <h2>20. Ilg‘or pedagogik tajribalarni o‘rganishda pedagogik o‘qishlar qanday rol uynaydi?</h2>
+                <ul>
+                    <li>A) Muhim va assosiy;</li>
+                    <li>B) Aloqasi yo‘q;</li>
+                    <li>V) unchalik emas, qo‘shimcha, to‘ldiruvchi;</li>
+                    <li>G) O‘quv jarayoniga ta’sir qilmaydi;</li>
+                </ul>
+                <p class="correct">To'g'ri javob: A) Muhim va assosiy;</p>
+            </div>
+            
+            <div class="question">
+                <h2>21. Analiz va sintez qaysi tadqiqot metodiga kiradi?</h2>
+                <ul>
+                    <li>A) Nazariy, ilmiy tadqiqot;</li>
+                    <li>B) Suhbat o‘qitish;</li>
+                    <li>V) Kuzatish, o‘rganish;</li>
+                    <li>G) eksperiment, tajriba;</li>
+                </ul>
+                <p class="correct">To'g'ri javob: A) Nazariy, ilmiy tadqiqot;</p>
+            </div>
+            
+            <div class="question">
+                <h2>22. Maktabda texnologiya fanini o‘rganishning necha foizi amaliy bo‘ladi?</h2>
+                <ul>
+                    <li>A) 80;</li>
+                    <li>B) 20;</li>
+                    <li>V) 60;</li>
+                    <li>S) 25;</li>
+                </ul>
+                <p class="correct">To'g'ri javob: A) 80;</p>
+            </div>
+            
+            <div class="question">
+                <h2>23. Texnologiya fani o‘qituvchisi qanday tayyorgarlikka ko‘proq ega bo‘lishi kerak?</h2>
+                <ul>
+                    <li>A) Yuqori g‘oyaviylik, pedagogik – psixologik tayyorgarlik, metodik, amaliy;</li>
+                    <li>B) Yuqori g‘oyaviylik, ishlab chiqarish;</li>
+                    <li>C) Yuqori pedagogik tayyorgarlik, g‘oyaviylik;</li>
+                    <li>S) O‘z kasbiga muhabbat, amaliy;</li>
+                </ul>
+                <p class="correct">To'g'ri javob: A) Yuqori g‘oyaviylik, pedagogik – psixologik tayyorgarlik, metodik, amaliy;</p>
+            </div>
+            
+            <div class="question">
+                <h2>24. Texnologiya fani o‘qituvchisi ilg‘or pedagogik tajribalarni, o‘zlashtirishda vaqtli matbuotdan foydalanadimi?</h2>
+                <ul>
+                    <li>A) Uzluksiz foydalanadi;</li>
+                    <li>B) Ahyon – ahyonda foydalanadi;</li>
+                    <li>V) Zaruriyat tug‘ilsa;</li>
+                    <li>S) Foydalanmaydi;</li>
+                </ul>
+                <p class="correct">To'g'ri javob: A) Uzluksiz foydalanadi;</p>
+            </div>
+            
+            <div class="question">
+                <h2>25. Texnologiya fanini o‘rganish jarayonida nafosat va iqtisodiy tarbiyalar uchun sharoitlar yaratiladimi?</h2>
+                <ul>
+                    <li>A) Yaratiladi;</li>
+                    <li>B) Yaratilmaydi;</li>
+                    <li>V) Imkoniyati yo‘q;</li>
+                    <li>S) Farki yo‘q;</li>
+                </ul>
+                <p class="correct">To'g'ri javob: A) Yaratiladi;</p>
+            </div>
+            
+            <div class="question">
+                <h2>26. Texnologiya fanining g‘oyaviy – siyosiy, axloqiy tarbiya uchun ahamiyati qanday?</h2>
+                <ul>
+                    <li>A) Katta;</li>
+                    <li>B) Ahamiyati kichik;</li>
+                    <li>V) Ahamiyati bo‘lmaydi;</li>
+                    <li>G) Ahamiyati salbiy;</li>
+                </ul>
+                <p class="correct">To'g'ri javob: A) Katta;</p>
+            </div>
+            
+            <div class="question">
+                <h2>27. Jismoniy mehnat nima?</h2>
+                <ul>
+                    <li>A) Muskul kuchlari ta’sirida bajariladigan maqsadli harakatlar;</li>
+                    <li>B) Muskul kuchi va nerv tizimlari ta’siri natijasidagi haraktlar;</li>
+                    <li>V) Asbob uskunalar yordamida bajariladigan mehnat usullari;</li>
+                    <li>G) Qishloq xujaligi, hunarmandchilik yumushlari;</li>
+                </ul>
+                <p class="correct">To'g'ri javob: A) Muskul kuchlari ta’sirida bajariladigan maqsadli harakatlar;</p>
+            </div>
+            
+            <div class="question">
+                <h2>28. Quyi sinflarda texnologiya fani nechta bo‘limdan iborat bo‘ladi?</h2>
+                <ul>
+                    <li>A) 3 ta;</li>
+                    <li>B) 2 ta;</li>
+                    <li>V) 6 ta;</li>
+                    <li>G) 4 ta;</li>
+                </ul>
+                <p class="correct">To'g'ri javob: A) 3 ta;</p>
+            </div>
+            
+            <div class="question">
+                <h2>29. Modellashtirish deganda nimani nazarda tutildi. (quyi sinflar misolida)</h2>
+                <ul>
+                    <li>A) Narsalarga ishlov bera olish bilan kichraytirilgan buyumlar yasash usuli;</li>
+                    <li>B) CHizma bilan ishlash;</li>
+                    <li>V) YOg‘och, yumoloq sim, tabiiy namunalar, tunika;</li>
+                    <li>G) Qog‘oz bilan ishlash;</li>
+                </ul>
+                <p class="correct">To'g'ri javob: A) Narsalarga ishlov bera olish bilan kichraytirilgan buyumlar yasash usuli;</p>
+            </div>
+            
+            <div class="question">
+                <h2>30. Texnikaviy mehnat bo‘limi deganda nimani tushunasiz va nimalarni o‘z ichiga oladi?</h2>
+                <ul>
+                    <li>A) YOg‘och, metallarga ishlov berish, mashinashunoslik, elektrotexnika;</li>
+                    <li>B) YOg‘och va metallarga ishlov berish bo‘limi;</li>
+                    <li>V) Ijtimoiy foydali mehnat, unumli mehnat, to‘garak;</li>
+                    <li>G) Kecha, uchrashuv, disput, ishlab chiqarish mehnati;</li>
+                </ul>
+                <p class="correct">To'g'ri javob: A) YOg‘och, metallarga ishlov berish, mashinashunoslik, elektrotexnika;</p>
+            </div>
+            
+            <div class="question">
+                <h2>31. Quyi sinflarda maxsuslashtirilgan ishlar nima?</h2>
+                <ul>
+                    <li>A) Metallardan, yog‘ochdan, plastmassadan, detallar yasash;</li>
+                    <li>B) Plastmassa, gazlama bo‘yicha topshiriqlarni o‘z ichiga oladi;</li>
+                    <li>V) Metallardan, yog‘ochdan, maishiy xizmat mehnatiga oid topshiriqlar;</li>
+                    <li>G) Detallar va qishloq xo‘jaligi mehnatiga oid topshiriklar;</li>
+                </ul>
+                <p class="correct">To'g'ri javob: A) Metallardan, yog‘ochdan, plastmassadan, detallar yasash;</p>
+            </div>
+            
+            <div class="question">
+                <h2>32. Quyi sinflarda hunarmandchilik ishlar nima?</h2>
+                <ul>
+                    <li>A) Badiiy hunarmandchilik elementlari, zarb qilish, naksh, va yog‘ochga mozayka naqshlari o‘rnatish;</li>
+                    <li>B) Zarb qilib naqshlar tushirish;</li>
+                    <li>V) YOg‘ochga naqsh solish;</li>
+                    <li>G) Amaliy san’at elementlari;</li>
+                </ul>
+                <p class="correct">To'g'ri javob: A) Badiiy hunarmandchilik elementlari, zarb qilish, naksh, va yog‘ochga mozayka naqshlari o‘rnatish;</p>
+            </div>
+            
+            <div class="question">
+                <h2>33. Hikoya va tushuntirish metodiga qo‘yiladigan talablar qanday bo‘ladi?</h2>
+                <ul>
+                    <li>A) Mazmunining to‘g‘riligi, izchillik, aniqlik va isbotlash;</li>
+                    <li>B) Mazmunini to‘g‘riligi, aniqligi, bayon ravonligi;</li>
+                    <li>V) Bayonning emosionalligi, o‘qituvchining nutq madaniyati;</li>
+                    <li>G) Mazmunning to‘g‘riligi, izchillik bilan bayon qilish, aniqlash va isbotlash;</li>
+                </ul>
+                <p class="correct">To'g'ri javob: A) Mazmunining to‘g‘riligi, izchillik, aniqlik va isbotlash;</p>
+            </div>
+            
+            <div class="question">
+                <h2>34. Kurs ishlarini bajarishda qanday masalalar yoritilishi kerak?</h2>
+                <ul>
+                    <li>A) Mavzuning o‘quv fanida tutgan urni, metodik tahlili;</li>
+                    <li>B) Mavzuning mazmunini metodik tahlili;</li>
+                    <li>V) Hajmining 25 -40 bet bo‘lishi;</li>
+                    <li>G) Mavzuning mazmunini yoritishda o‘quv adabiyotlaridan foydalanish;</li>
+                </ul>
+                <p class="correct">To'g'ri javob: A) Mavzuning o‘quv fanida tutgan urni, metodik tahlili;</p>
+            </div>
+            
+            <div class="question">
+                <h2>35. Kurs ishining hajmi o‘rtacha necha betni tashkil etish metodik jihatdan to‘g‘ri?</h2>
+                <ul>
+                    <li>A) 35-45 bet;</li>
+                    <li>B) 20-30 bet;</li>
+                    <li>V) 30-40 bet;</li>
+                    <li>G) 40 –60 bet;</li>
+                </ul>
+                <p class="correct">To'g'ri javob: A) 35-45 bet;</p>
+            </div>
+            
+            <div class="question">
+                <h2>36. Sinf rahbarining yillik ish rejasi bo‘ladimi?</h2>
+                <ul>
+                    <li>A) Tarbiyaviy tadbirlar rejasi bo‘ladi;</li>
+                    <li>B) Bo‘lmaydi, shart emas;</li>
+                    <li>V) SHaroitdan kelib chiqib ishlaydi;</li>
+                    <li>G) Ta’lim muassasasi rejasiga muvofiq tuzadi;</li>
+                </ul>
+                <p class="correct">To'g'ri javob: A) Tarbiyaviy tadbirlar rejasi bo‘ladi;</p>
+            </div>
+            
+            <div class="question">
+                <h2>37. O‘quvchilarning to‘garaklarda qatnashishi majburiymi yoki ixtiyoriymi?</h2>
+                <ul>
+                    <li>A) Ixtiyoriy;</li>
+                    <li>B) Birovlarning maslahati bilan;</li>
+                    <li>V) O‘qituvchining maqtovi bilan;</li>
+                    <li>G) Majburiy, barchasi qatnashishi shart;</li>
+                </ul>
+                <p class="correct">To'g'ri javob: A) Ixtiyoriy;</p>
+            </div>
+            
+            <div class="question">
+                <h2>38. Fan olimpiadaga tayyorlanishda topshiriqlarni bajarish qanday amalga oshiriladi?</h2>
+                <ul>
+                    <li>A) CHizma bo‘yicha buyumlar va ularning loyihasini tayyorlashdan iborat;</li>
+                    <li>B) Rasmlar bo‘yicha buyumlar va ularning qismlari tayyorlanadi;</li>
+                    <li>G) Grafiklar bo‘yicha buyumlar tayyorlanadi;</li>
+                    <li>G) Masalalar echish bo‘yicha buyumlar tayyorlanadi;</li>
+                </ul>
+                <p class="correct">To'g'ri javob: A) CHizma bo‘yicha buyumlar va ularning loyihasini tayyorlashdan iborat;</p>
+            </div>
+            
+            <div class="question">
+                <h2>39. Dars jarayonida BKM larni tekshirishda qancha vaqt sarflashni metodik jihatdan to‘g‘ri hisoblanadi?</h2>
+                <ul>
+                    <li>A) 10-15 daqiqa;</li>
+                    <li>B) 5 – 10 daqiqa;</li>
+                    <li>V) 3-7 daqiqa;</li>
+                    <li>G) 20 daqiqa;</li>
+                </ul>
+                <p class="correct">To'g'ri javob: A) 10-15 daqiqa;</p>
+            </div>
+            
+            <div class="question">
+                <h2>40. O‘qituvchilar uchun chiqariladigan adabiyotlar qanday ataladi?</h2>
+                <ul>
+                    <li>A) O‘quv metodik adabiyotlar;</li>
+                    <li>B) Uslubiy qo‘llanmalar, darsliklar;</li>
+                    <li>V) Badiy ilmiy adabiyot;</li>
+                    <li>G) Qo‘llanmalar metodik ishlanmalar;</li>
+                </ul>
+                <p class="correct">To'g'ri javob: A) O‘quv metodik adabiyotlar;</p>
+            </div>
+            
+            <div class="question">
+                <h2>41. O‘quvchilar uchun yaratilgan adabiyotlar qanday ataladi?</h2>
+                <ul>
+                    <li>A) O‘quv adabiyotlari, darsliklar, topshiriqlar;</li>
+                    <li>B) Uslubiy adabiyotlar, metodik ishlanmalar;</li>
+                    <li>V) Qo‘llanma, elektron ishlanmalar;</li>
+                    <li>G) Metodik qo‘llanma, tavsiyalar;</li>
+                </ul>
+                <p class="correct">To'g'ri javob: A) O‘quv adabiyotlari, darsliklar, topshiriqlar;</p>
+            </div>
+            
+            <div class="question">
+                <h2>42. O‘quv rejalarida sayohat mehnat bo‘yicha V-VIII sinflarda bir yilda necha marta ishlab chiqarish obektlariga sayohat uyushtirish nazarda tutilgan?</h2>
+                <ul>
+                    <li>A) Bir marta;</li>
+                    <li>B) Har chorakda bir marta;</li>
+                    <li>V) O‘quv yilida ikki marta;</li>
+                    <li>G) O‘tkazilmaydi;</li>
+                </ul>
+                <p class="correct">To'g'ri javob: A) Bir marta;</p>
+            </div>
+            
+            <div class="question">
+                <h2>43. Sayohatlarni o‘tkazish metodikasi necha bosqichdan iborat bo‘ladi?</h2>
+                <ul>
+                    <li>A) Sayohat tayyorlash, utkazish va yakunlash (3 bosqich);</li>
+                    <li>B) Sayohatga borish (1 bosqich);</li>
+                    <li>V) Sayohat yakuni (ikki bosqich);</li>
+                    <li>G) Umumlashganda sayohat;</li>
+                </ul>
+                <p class="correct">To'g'ri javob: A) Sayohat tayyorlash, utkazish va yakunlash (3 bosqich);</p>
+            </div>
+            
+            <div class="question">
+                <h2>44. Umumlashganda sayohatlar qanday maqsadlarda tashkil etiladi?</h2>
+                <ul>
+                    <li>A) Ishlab chiqarish korxonasi barcha ishlab chiqarish jarayonlari o‘rganildi;</li>
+                    <li>B) Korxona qismlarga bo‘lib o‘rganiladi;</li>
+                    <li>V) Fanlararo aloqadorlik asosida o‘rganadi, amalga oshiriladi;</li>
+                    <li>G) Tabiatga sayohat;</li>
+                </ul>
+                <p class="correct">To'g'ri javob: V) Fanlararo aloqadorlik asosida o‘rganadi, amalga oshiriladi;</p>
+            </div>
+            
+            <div class="question">
+                <h2>45. Texnologiya fanida qanday metodlardan foydalaniladi?</h2>
+                <ul>
+                    <li>A) O‘qitish, o‘rganish, o‘zlashtirishni aniqlash;</li>
+                    <li>B) Ma’ruza, amaliy, laboratoriya;</li>
+                    <li>V) Nazariy, amaliy, ishlab chiqarish;</li>
+                    <li>G) Texnologik, fizikaviy, amaliy;</li>
+                </ul>
+                <p class="correct">To'g'ri javob: A) O‘qitish, o‘rganish, o‘zlashtirishni aniqlash;</p>
+            </div>
+            
+            <div class="question">
+                <h2>46. Yog‘ochni quritishda qancha temperatura zarur bo‘ladi?</h2>
+                <ul>
+                    <li>A) 103 – 1025°C;</li>
+                    <li>B) 25- 60°C;</li>
+                    <li>V) 100 –1250°C;</li>
+                    <li>G) 80 – 900°C;</li>
+                </ul>
+                <p class="correct">To'g'ri javob: V) 100 –1250°C;</p>
+            </div>
+            
+            <div class="question">
+                <h2>47. Yog‘och namligini quritish qancha vaqt davom etishi kerak?</h2>
+                <ul>
+                    <li>A) 15 – 20 soat;</li>
+                    <li>B) 10 – 11 soat;</li>
+                    <li>V) 8 – 10 soat;</li>
+                    <li>G) 15 – 18 soat;</li>
+                </ul>
+                <p class="correct">To'g'ri javob: A) 15 – 20 soat;</p>
+            </div>
+            
+            <div class="question">
+                <h2>48. Texnik masalalar nimani anglatadi?</h2>
+                <ul>
+                    <li>A) Mehnat jarayonida bilim, o‘quv va malakalarning birgalikda qo‘llanilishi;</li>
+                    <li>B) Mehnat qilishda bilim, ko‘nikma va malakaning qo‘llanilishi;</li>
+                    <li>V) Malakaning mahoratga aylanishini;</li>
+                    <li>G) Qo‘llanilishiga nisbatan bajarilishini anglatadi;</li>
+                </ul>
+                <p class="correct">To'g'ri javob: A) Mehnat jarayonida bilim, o‘quv va malakalarning birgalikda qo‘llanilishi;</p>
+            </div>
+
+            <div class="question">
+                <h2>49. Konstruksiyalash nima?</h2>
+                <ul>
+                    <li>A) Mashinalar, moslamalar, asbob uskunalarning chizmalarini yaratishga mo‘ljallangan ijodiy jarayonlar;</li>
+                    <li>B) Modellar maketlarning chizmada tasvirlashning ijodiy jarayonidir;</li>
+                    <li>V) Moslamalar, asbob uskunalarni yaratish jarayonida diagrammalardan foydalanish jarayonidir;</li>
+                    <li>G) Asbob uskunalarning, model va maketlarning chizmalarini rasmda tasvirlash jarayonidir;</li>
+                </ul>
+                <p class="correct">To'g'ri javob: A) Mashinalar, moslamalar, asbob uskunalarning chizmalarini yaratishga mo‘ljallangan ijodiy jarayonlar;</p>
+            </div>
+            
+            <div class="question">
+                <h2>50. Texnologik xaritalarni tuzishda muayyan bilimga ega bo‘lish shartmi?</h2>
+                <ul>
+                    <li>A) Muayyan bilimga ega bo‘lish kerak;</li>
+                    <li>B) Kamrok tushunchalarga ega bo‘lishi kerak;</li>
+                    <li>V) Muayyan bilimga ega bo‘lmasada ko‘nikmalar zarurdir;</li>
+                </ul>
+                <p class="correct">To'g'ri javob: A) Muayyan bilimga ega bo‘lish kerak;</p>
+            </div>
+            
+            <div class="question">
+                <h2>51. CHizmalarni o‘qishga o‘rgatishning nechta usuli «Mehnat ta’lim metodikasi» qo‘llanmalarida ko‘rsatilgan?</h2>
+                <ul>
+                    <li>A) 2 ta;</li>
+                    <li>B) 3 ta;</li>
+                    <li>V) 4 ta;</li>
+                    <li>G) 1 ta;</li>
+                </ul>
+                <p class="correct">To'g'ri javob: A) 2 ta;</p>
+            </div>
+            
+            <div class="question">
+                <h2>52. O‘quvchilarga modellashtirishni o‘rgatish jarayoni qanday bosqichlarda amalga oshiriladi?</h2>
+                <ul>
+                    <li>A) Mukammal texnik, qisqartirilgan texnik shartli hujjatlarda;</li>
+                    <li>B) Mukammal texnik hujjatlar, qisqartirilgan texnologik xujatlar;</li>
+                    <li>V) Texnik shartlar yoki o‘z xuquqi bo‘yicha me’yoriy hujjatlar;</li>
+                    <li>G) Qisqartirilmagan texnik hujjatlar, o‘z xoxishiga ko‘ra;</li>
+                </ul>
+                <p class="correct">To'g'ri javob: A) Mukammal texnik, qisqartirilgan texnik shartli hujjatlarda;</p>
+            </div>
+            
+            <div class="question">
+                <h2>53. Modellashtirishni o‘rganish jarayonida obektlarni tayyorlash necha bosqichda amalga oshiriladi?</h2>
+                <ul>
+                    <li>A) 3 bosqich;</li>
+                    <li>B) 1 bosqich;</li>
+                    <li>V) 2 bosqich;</li>
+                    <li>G) 4 bosqich;</li>
+                </ul>
+                <p class="correct">To'g'ri javob: A) 3 bosqich;</p>
+            </div>
+            
+            <div class="question">
+                <h2>54. Qisqa texnik hujjatlarni tuzishda o‘quvchilar nimalarga ko‘proq etibor qaratmog‘i kerak?</h2>
+                <ul>
+                    <li>A) CHizmaga, uning qismlariga;</li>
+                    <li>B) Rasmlarga, ularning tasvirlariga;</li>
+                    <li>V) Tobora murakkab topshiriklarni bajarishga e’tibor;</li>
+                    <li>G) Engil topshiriklarni bajarishga;</li>
+                </ul>
+                <p class="correct">To'g'ri javob: A) CHizmaga, uning qismlariga;</p>
+            </div>
+            
+            <div class="question">
+                <h2>55. O‘quvchilarga ishlab chiqarishga mo‘ljallangan topshiriqlarni bilishiga qancha vaqt ajratilishi metodik jihatdan to‘g‘ri deb hisoblanadi?</h2>
+                <ul>
+                    <li>A) 10 daqiqa;</li>
+                    <li>B) 30 daqiqa;</li>
+                    <li>V) 15 daqiqa;</li>
+                    <li>G) 25 daqiqa;</li>
+                </ul>
+                <p class="correct">To'g'ri javob: V) 15 daqiqa;</p>
+            </div>
+            
+            <div class="question">
+                <h2>56. Boshlang‘ich sinflarda jamoatchilik asosida ijtimoiy foydali, unumli mehnatga haftasiga necha soat vaqt ajratilshi mumkin?</h2>
+                <ul>
+                    <li>A) 2 soat;</li>
+                    <li>B) 3 soat;</li>
+                    <li>V) 1 soat;</li>
+                    <li>G) 4 soat;</li>
+                </ul>
+                <p class="correct">To'g'ri javob: A) 2 soat;</p>
+            </div>
+            
+            <div class="question">
+                <h2>57. V- sinflarda unumli mehnatga bir yilda necha soat vaqt ajratiladi?</h2>
+                <ul>
+                    <li>A) 24-36 soat;</li>
+                    <li>B) 28-30 soat;</li>
+                    <li>V) 24-42 soat;</li>
+                    <li>G) 28–38 soat;</li>
+                </ul>
+                <p class="correct">To'g'ri javob: A) 24-36 soat;</p>
+            </div>
+            
+            <div class="question">
+                <h2>58. VIII- sinfda unumli mexnatga bir yilda necha soat ajratiladi?</h2>
+                <ul>
+                    <li>A) 64-96 soat;</li>
+                    <li>B) 25-60 soat;</li>
+                    <li>V) 70-80 soat;</li>
+                    <li>G) 85-95 soat;</li>
+                </ul>
+                <p class="correct">To'g'ri javob: A) 64-96 soat;</p>
+            </div>
+            
+            <div class="question">
+                <h2>59. VIII sinfda mehnat amaliyoti necha kun bo‘ladi?</h2>
+                <ul>
+                    <li>A) 16 kun;</li>
+                    <li>B) 15 kun;</li>
+                    <li>V) 10 kun;</li>
+                    <li>G) 5 kun;</li>
+                </ul>
+                <p class="correct">To'g'ri javob: A) 16 kun;</p>
+            </div>
+            
+            <div class="question">
+                <h2>60. VII- sinfda mexnat amaliyoti necha kun qilib belgilanadi?</h2>
+                <ul>
+                    <li>A) 10 kun;</li>
+                    <li>B) 20 kun;</li>
+                    <li>V) 16 kun;</li>
+                    <li>G) 12 kun;</li>
+                </ul>
+                <p class="correct">To'g'ri javob: A) 10 kun;</p>
+            </div>
+            
+            <div class="question">
+                <h2>61. Metallarning bir jinsligi qanday aniqlanadi?</h2>
+                <ul>
+                    <li>A) Ul’tratovush yordamida;</li>
+                    <li>B) Chizmalar asosida;</li>
+                    <li>V) Rentgen yordamida;</li>
+                    <li>G) O‘lchovchi asboblar yordamida;</li>
+                </ul>
+                <p class="correct">To'g'ri javob: V) Rentgen yordamida;</p>
+            </div>
+            
+            <div class="question">
+                <h2>62. Masofadan boshqarish va nazorat qilish to‘liq usullari qanday aniqlanadi?</h2>
+                <ul>
+                    <li>A) Distansion, telemexanik usullari;</li>
+                    <li>B) Distansion mexanik usul;</li>
+                    <li>V) Radiomexanik, telemexanik usullari;</li>
+                    <li>G) Chizg‘ich yordamida boshqarish usullari;</li>
+                </ul>
+                <p class="correct">To'g'ri javob: A) Distansion, telemexanik usullari;</p>
+            </div>
+
+            <div class="question">
+                <h2>63. Metallarga qo‘lda ishlov berishda malaka va ko‘nikmalarni shakllantirish bilan bog‘liq darslarga tayyorlanayotganda o‘qituvchi qanday masalalarni hal qilishi kerak?</h2>
+                <ul>
+                    <li>A) O‘quvchilarga qurbi etadigan obektlarni tanlash, yangi mavzuni bayon etish usullarini aniqlash, mustaqil ishlashni tashkil qilish;</li>
+                    <li>B) Mustaqil ishlashni tashkil qilish, referatlardan foydalanish;</li>
+                    <li>V) O‘quvchilarning qurbi etadigan obektlarni tanlash, har xil chizmalardan foydalanish;</li>
+                    <li>G) Suhbat va ko‘rsatmali metodlardan foydalanish;</li>
+                </ul>
+                <p class="correct">To'g'ri javob: A) O‘quvchilarga qurbi etadigan obektlarni tanlash, yangi mavzuni bayon etish usullarini aniqlash, mustaqil ishlashni tashkil qilish;</p>
+            </div>
+            
+            <div class="question">
+                <h2>64. Rejalash qanday usullar bo‘yicha belgilanadi?</h2>
+                <ul>
+                    <li>A) Andoza, detal namunasi, chizma bo‘yicha;</li>
+                    <li>B) Andoza bo‘yicha;</li>
+                    <li>V) Detal namunasi bo‘yicha;</li>
+                    <li>G) Chizma bo‘yicha;</li>
+                </ul>
+                <p class="correct">To'g'ri javob: A) Andoza, detal namunasi, chizma bo‘yicha;</p>
+            </div>
+            
+            <div class="question">
+                <h2>65. Eng oddiy geometrik figuralar qanday bo‘ladi?</h2>
+                <ul>
+                    <li>A) Kvadrat, to‘g‘ri to‘rtburchak, konus;</li>
+                    <li>B) Uchburchak, oktaedr;</li>
+                    <li>V) Trapesiya, konus;</li>
+                    <li>G) Romba , kvadrat;</li>
+                </ul>
+                <p class="correct">To'g'ri javob: A) Kvadrat, to‘g‘ri to‘rtburchak, konus;</p>
+            </div>
+            
+            <div class="question">
+                <h2>66. Zarbli operasiyalar qanday bo‘ladi?</h2>
+                <ul>
+                    <li>A) Bolg‘a yordamida bajariladigan operasiyalar;</li>
+                    <li>B) Tilish, kesish;</li>
+                    <li>V) Teshikchalar ochish;</li>
+                    <li>G) Presslash natijasida bajariladigan operasiyalar;</li>
+                </ul>
+                <p class="correct">To'g'ri javob: A) Bolg‘a yordamida bajariladigan operasiyalar;</p>
+            </div>
+            
+            <div class="question">
+                <h2>67. Parchinlash qanday bo‘ladi?</h2>
+                <ul>
+                    <li>A) Parchin mixlar bilan biriktirish;</li>
+                    <li>B) Payvandlash, gaz va elektr payvandlash;</li>
+                    <li>V) Zigzagsimon payvandlash;</li>
+                    <li>G) Sim va boltlar bilan mahkamlash;</li>
+                </ul>
+                <p class="correct">To'g'ri javob: A) Parchin mixlar bilan biriktirish;</p>
+            </div>
+            
+            <div class="question">
+                <h2>68. Metallarni qirqish qaysi qo‘lda ishlov berish asboblari bilan bajariladi?</h2>
+                <ul>
+                    <li>A) Ombur, qaychi, arra bilan;</li>
+                    <li>B) Bolta, tesha, arra bilan;</li>
+                    <li>V) Kesuvchi apparatlar bilan;</li>
+                    <li>G) Elektr apparati avtogen bilan;</li>
+                </ul>
+                <p class="correct">To'g'ri javob: A) Ombur, qaychi, arra bilan;</p>
+            </div>
+            
+            <div class="question">
+                <h2>69. Metallarga termik ishlov berish jarayoni qanday bosqichlardan iborat?</h2>
+                <ul>
+                    <li>A) Muayyan temperaturada qizdirish va sovutish, ushlab turush;</li>
+                    <li>B) Buyumni muayyan temperaturagacha qizdirish;</li>
+                    <li>V) Bir maromda sovitish;</li>
+                    <li>G) Ishlov berilgandan keyin sovuq suvga botirish;</li>
+                </ul>
+                <p class="correct">To'g'ri javob: A) Muayyan temperaturada qizdirish va sovutish, ushlab turush;</p>
+            </div>
+            
+            <div class="question">
+                <h2>70. Metallarning mexanik xossalari, termik ishlov berish jarayonida o‘zgaradimi?</h2>
+                <ul>
+                    <li>A) O‘zgaradi;</li>
+                    <li>B) O‘zgarmaydi;</li>
+                    <li>V) Kamroq o‘zgaradi sezilmaydi;</li>
+                    <li>G) Qiyshayadi;</li>
+                </ul>
+                <p class="correct">To'g'ri javob: A) O‘zgaradi;</p>
+            </div>
+            
+            <div class="question">
+                <h2>71. Metchik va plashkalar mo‘rtmi yoki egiluvchanmi?</h2>
+                <ul>
+                    <li>A) Mo‘rt;</li>
+                    <li>B) Egiluvchan;</li>
+                    <li>V) Qattiq;</li>
+                    <li>G) YUmshoq;</li>
+                </ul>
+                <p class="correct">To'g'ri javob: A) Mo‘rt;</p>
+            </div>
+            
+            <div class="question">
+                <h2>72. O‘quv ustoxonalarida o‘quvchilar qaysi arralar bilan ko‘proq ishlaydi?</h2>
+                <ul>
+                    <li>A) Lobzik, burcharra va dastarra;</li>
+                    <li>B) Elektr arra;</li>
+                    <li>V) Kata yoy arra;</li>
+                    <li>G) Randa, arra;</li>
+                </ul>
+                <p class="correct">To'g'ri javob: A) Lobzik, burcharra va dastarra;</p>
+            </div>
+            
+            <div class="question">
+                <h2>73. O‘quv ustaxonalarida o‘quvchilar asosan qanday randalardan foydalaniladi?</h2>
+                <ul>
+                    <li>A) Sherxebel, japs randalar;</li>
+                    <li>B) Sherxebel randa;</li>
+                    <li>V) Burchakli randa;</li>
+                    <li>G) Teshik ochuvchi randa;</li>
+                </ul>
+                <p class="correct">To'g'ri javob: A) Sherxebel, japs randalar;</p>
+            </div>
+            
+            <div class="question">
+                <h2>74. Randa tig‘ini charxlanayotganda charxlash asbobining ish yuzasiga nisbatan qaysi burchak ostida ushlab turiladimi?</h2>
+                <ul>
+                    <li>A) Bir xil burchak ostida;</li>
+                    <li>B) Har xil burchak ostida;</li>
+                    <li>V) O‘zi xoxlagan burchakda;</li>
+                    <li>G) To‘g‘ri burchak ostida;</li>
+                </ul>
+                <p class="correct">To'g'ri javob: B) Har xil burchak ostida;</p>
+            </div>
+            
+            <div class="question">
+                <h2>75. O‘quvchilar o‘quv ustaxanasida teshik ochish uchun qaysi asboblardan foydalanish mumkin?</h2>
+                <ul>
+                    <li>A) Iskana va yapasqi iskanalar;</li>
+                    <li>B) Mixlar bilan;</li>
+                    <li>V) Kachov iskana;</li>
+                    <li>G) Tumbasimon iskanalar, drel;</li>
+                </ul>
+                <p class="correct">To'g'ri javob: G) Tumbasimon iskanalar, drel;</p>
+            </div>
+            
+            <div class="question">
+                <h2>76. To‘rtburchak iskanalardan foydalanish davrida qaysi bolg‘alardan foydalaniladi?</h2>
+                <ul>
+                    <li>A) Yog‘och bolg‘a, kiyanka;</li>
+                    <li>B) Metall, bolg‘a;</li>
+                    <li>V) Plastmassa bolg‘a;</li>
+                    <li>G) Tesha bilan ishlaydi;</li>
+                </ul>
+                <p class="correct">To'g'ri javob: A) Yog‘och bolg‘a, kiyanka;</p>
+            </div>
+            
+            <div class="question">
+                <h2>77. YOg‘ochni pardozlash ishlarini bajarish jarayonida xonadagi normal temperatura qancha bo‘lishi kerak?</h2>
+                <ul>
+                    <li>A) 18 - 200S;</li>
+                    <li>B) 15-200S;</li>
+                    <li>V) 10-140S;</li>
+                    <li>G) 20-260S;</li>
+                </ul>
+                <p class="correct">To'g'ri javob: A) 18 - 200S;</p>
+            </div>
+            
+            <div class="question">
+                <h2>78. IX sinf texnologiya fani darslarida yog‘och va metallga mexanik ishlov beruvchi qaysi mashinalarni o‘rganiladi?</h2>
+                <ul>
+                    <li>A) Oddiy tokarlik hamda parmalash stanoklari;</li>
+                    <li>B) Stanoklar;</li>
+                    <li>V) Tokarlik stanoklaridan;</li>
+                    <li>G) Har xil stanoklar va mashinalar;</li>
+                </ul>
+                <p class="correct">To'g'ri javob: A) Oddiy tokarlik hamda parmalash stanoklari;</p>
+            </div>
+            
+            <div class="question">
+                <h2>79. Slesarlik ustaxonasida havo xarorati qancha bo‘lishi kerak?</h2>
+                <ul>
+                    <li>A) 16-180S;</li>
+                    <li>B) 15-170S;</li>
+                    <li>V) 14-170S;</li>
+                    <li>G) 20-125S;</li>
+                </ul>
+                <p class="correct">To'g'ri javob: A) 16-180S;</p>
+            </div>
+            
+            <div class="question">
+                <h2>80. Duradgorlik ustaxonasida havo xarorati qancha bo‘lishi kerak?</h2>
+                <ul>
+                    <li>A) 15-170S;</li>
+                    <li>B) 14-160S;</li>
+                    <li>V) 14-180S;</li>
+                    <li>G) 10-125S;</li>
+                </ul>
+                <p class="correct">To'g'ri javob: A) 15-170S;</p>
+            </div>
+            
+            <div class="question">
+                <h2>81. IX yillik maktab o‘quv ustaxonalarda uchun me’yor bo‘yicha qancha yog‘och materiali kerak?</h2>
+                <ul>
+                    <li>A) 7 m<sup>3</sup>;</li>
+                    <li>B) 5 m<sup>3</sup>;</li>
+                    <li>V) 2 m<sup>3</sup>;</li>
+                    <li>G) 10 m<sup>3</sup>;</li>
+                </ul>
+                <p class="correct">To'g'ri javob: A) 7 m<sup>3</sup>;</p>
+            </div>
+            
+            <div class="question">
+                <h2>82. IX yillik o‘quv ustaxonalari uchun me’yor bo‘yicha qancha metall material kerak?</h2>
+                <ul>
+                    <li>A) 400 kg;</li>
+                    <li>B) 300 kg;</li>
+                    <li>V) 200 kg;</li>
+                    <li>G) 250 kg;</li>
+                </ul>
+                <p class="correct">To'g'ri javob: A) 400 kg;</p>
+            </div>
+            
+            <div class="question">
+                <h2>83. Elektr mantaj ishlarini bajarish usullarini o‘rgatish samaradorligini oshirish uchun qanday ko‘rsatmali vositalardan foydalanish mumkin?</h2>
+                <ul>
+                    <li>A) Bosmaxonada va qo‘lda tayyorlangan jadvallar, vositalar, stendlar;</li>
+                    <li>B) Grafiklar, rasmlar, metallar, maketlar;</li>
+                    <li>V) Barcha texnik vositalar (divproektorlar, grafoproektorlar);</li>
+                    <li>G) Schyotchiklar, qarshiliklar, voltmetrlar;</li>
+                </ul>
+                <p class="correct">To'g'ri javob: A) Bosmaxonada va qo‘lda tayyorlangan jadvallar, vositalar, stendlar;</p>
+            </div>
+            
+            <div class="question">
+                <h2>84. Metall qirqish stanoklarining kelajagi qanday bo‘lishi kerak?</h2>
+                <ul>
+                    <li>A) Yangi texnologik jarayonlarning kompleks avtomatlashtirishdir;</li>
+                    <li>B) Kompyuterlashtiriladi;</li>
+                    <li>V) Yangi avlodlarning yaratilishi;</li>
+                    <li>G) Yangi texnologik jarayonlarning ishlatilishida;</li>
+                </ul>
+                <p class="correct">To'g'ri javob: A) Yangi texnologik jarayonlarning kompleks avtomatlashtirishdir;</p>
+            </div>
+            
+            <div class="question">
+                <h2>85. Maktab o‘quv ustaxonasi qanday turlarga bo‘linadi?</h2>
+                <ul>
+                    <li>A) Kombinasiyalangan, ixtisoslashtirilgan;</li>
+                    <li>B) Yog‘ochga ishlov berish ustaxonalari;</li>
+                    <li>V) Metallga ishlov berish ustaxonalari;</li>
+                    <li>G) Kombinasiyalangan;</li>
+                </ul>
+                <p class="correct">To'g'ri javob: A) Kombinasiyalangan, ixtisoslashtirilgan;</p>
+            </div>
+            
+            <div class="question">
+                <h2>86. Kombinasiyalangan ustaxona sahni qancha bo‘lishi kerak?</h2>
+                <ul>
+                    <li>A) 60 m<sup>2</sup>;</li>
+                    <li>B) 70 m<sup>2</sup>;</li>
+                    <li>V) 90 m<sup>2</sup>;</li>
+                    <li>G) 100 m<sup>2</sup>;</li>
+                </ul>
+                <p class="correct">To'g'ri javob: A) 60 m<sup>2</sup>;</p>
+            </div>
+            
+            <div class="question">
+                <h2>87. Ixtisoslashtirilgan ustaxonalar qachon tashkil qilinadi?</h2>
+                <ul>
+                    <li>A) 20 tadan ko‘p sinfi bo‘lgan maktablarda;</li>
+                    <li>B) 20 tadan kam sinfi bo‘lgan maktablarda;</li>
+                    <li>V) 13 tadan ko‘p sinfi bo‘lgan maktablarda;</li>
+                    <li>G) 10 tadan ko‘p sinfi bo‘lgan maktablarda;</li>
+                </ul>
+                <p class="correct">To'g'ri javob: A) 20 tadan ko‘p sinfi bo‘lgan maktablarda;</p>
+            </div>
+            
+            <div class="question">
+                <h2>88. Asbobxonalarning sahni qancha bo‘lishi metodik jihatdan to‘g‘ri deb o‘ylaysiz?</h2>
+                <ul>
+                    <li>A) 20 m<sup>2</sup>;</li>
+                    <li>B) 10 m<sup>2</sup>;</li>
+                    <li>V) 15 m<sup>2</sup>;</li>
+                    <li>G) 12 m<sup>2</sup>;</li>
+                </ul>
+                <p class="correct">To'g'ri javob: A) 20 m<sup>2</sup>;</p>
+            </div>
+            
+            <div class="question">
+                <h2>89. Maktab o‘quv ustaxonalarida qaysi markadagi metall qirqish kompleks tokarlik stanoklari bo‘lishi mumkin?</h2>
+                <ul>
+                    <li>A) TV-15, TV-16, 2M-112, NGF-100, ETSH-1; TV-16;</li>
+                    <li>B) ETSH-1;</li>
+                    <li>V) TV-5; TDS-120;</li>
+                    <li>G) 2M-12, NGF-100;</li>
+                </ul>
+                <p class="correct">To'g'ri javob: A) TV-15, TV-16, 2M-112, NGF-100, ETSH-1; TV-16;</p>
+            </div>
+            
+            <div class="question">
+                <h2>90. Ustaxonalarda o‘rnatilgan metall qirqish stanoklari orasida taxminan qancha bo‘sh joy bo‘lishi mumkin?</h2>
+                <ul>
+                    <li>A) 900 mm;</li>
+                    <li>B) 100 mm;</li>
+                    <li>V) 700 mm;</li>
+                    <li>G) 800 mm;</li>
+                </ul>
+                <p class="correct">To'g'ri javob: A) 900 mm;</p>
+            </div>
+            
+            <div class="question">
+                <h2>91. Umumiy tarzda foydalanadigan asbob va jihozlar eng kamida nechtadan kam bo‘lmasligi maqsadga muvofiqdir?</h2>
+                <ul>
+                    <li>A) 2-3 tadan;</li>
+                    <li>B) 1 tadan;</li>
+                    <li>V) 4 tadan;</li>
+                    <li>G) 5 tadan;</li>
+                </ul>
+                <p class="correct">To'g'ri javob: A) 2-3 tadan;</p>
+            </div>
+            
+            <div class="question">
+                <h2>92. Inson uchun mehnat faoliyati nima?</h2>
+                <ul>
+                    <li>A) Tabiiy fiziologik ehtiyojdir;</li>
+                    <li>B) Tabiiy ta’sir ko‘rsatish;</li>
+                    <li>V) Yashash uchun kurash;</li>
+                    <li>G) Anatomik fiziologik ehtiyojdir;</li>
+                </ul>
+                <p class="correct">To'g'ri javob: A) Tabiiy fiziologik ehtiyojdir;</p>
+            </div>
+            
+            <div class="question">
+                <h2>93. Mehnat nima?</h2>
+                <ul>
+                    <li>A) Har qanday jamiyatning mavjudligi va rivojlanishi shaxs faoliyatining shakllanishi uchun zaruriy shart;</li>
+                    <li>B) Yashash uchun kurashishlar;</li>
+                    <li>V) Jamiyat taraqqiyotida muhim omil sanaladi;</li>
+                    <li>G) Jamiyatni rivojlanishida asosiy vosita bo‘lib sanaladi;</li>
+                </ul>
+                <p class="correct">To'g'ri javob: A) Har qanday jamiyatning mavjudligi va rivojlanishi shaxs faoliyatining shakllanishi uchun zaruriy shart;</p>
+            </div>
+            
+            <div class="question">
+                <h2>94. Mehnat faoliyatining xususiyati nima?</h2>
+                <ul>
+                    <li>A) Insonning psixik va axloqiy tasavvurining shakllanishiga ta’sir kursatuvchi;</li>
+                    <li>B) Tasavvurning shakllanishi;</li>
+                    <li>V) Tasavvurning rivojlanishi;</li>
+                    <li>G) Inson psixofiziologik tasavvurining shakllantirish;</li>
+                </ul>
+                <p class="correct">To'g'ri javob: A) Insonning psixik va axloqiy tasavvurining shakllanishiga ta’sir kursatuvchi;</p>
+            </div>
+            
+            <div class="question">
+                <h2>95. Texnologiya fani darslarida o‘quvchilar umumtexnika xarakteridagi qaysi fanlarning dastlabki malumotlarni egallaydilar?</h2>
+                <ul>
+                    <li>A) Chizmachilik, materialshunoslik, mashinashunoslik, elektrotexnika;</li>
+                    <li>B) Adabiyot, tarix, jug‘rofiya, fizika;</li>
+                    <li>V) Fizika, ximiya, rasm, fiziologiya;</li>
+                    <li>G) Chet-tili, mashinashunoslik;</li>
+                </ul>
+                <p class="correct">To'g'ri javob: A) Chizmachilik, materialshunoslik, mashinashunoslik, elektrotexnika;</p>
+            </div>
+            
+            <div class="question">
+                <h2>96. Kuchlanish qaysi harf bilan belgilanadi?</h2>
+                <ul>
+                    <li>A) U;</li>
+                    <li>B) D;</li>
+                    <li>V) S;</li>
+                    <li>G) U;</li>
+                </ul>
+                <p class="correct">To'g'ri javob: A) U;</p>
+            </div>
+            
+            <div class="question">
+                <h2>97. «Ta’lim to‘g‘risida» gi qonun, «Kadrlar tayyorlash Milliy dasturi» nechanchi yili qabul qilindi?</h2>
+                <ul>
+                    <li>A) 1997 yil;</li>
+                    <li>B) 1990 yil;</li>
+                    <li>V) 2000 yil;</li>
+                    <li>G) 1999 yil;</li>
+                </ul>
+                <p class="correct">To'g'ri javob: A) 1997 yil;</p>
+            </div>
+            
+            <div class="question">
+                <h2>98. «Ta’lim to‘g‘risida»gi qonun necha moddadan iborat?</h2>
+                <ul>
+                    <li>A) 34 ta;</li>
+                    <li>B) 30 ta;</li>
+                    <li>V) 31 ta;</li>
+                    <li>G) 20 ta;</li>
+                </ul>
+                <p class="correct">To'g'ri javob: A) 34 ta;</p>
+            </div>
+            
+            <div class="question">
+                <h2>99. Kadrlar tayyorlash Milliy dasturi necha bobdan iborat?</h2>
+                <ul>
+                    <li>A) 5 ta;</li>
+                    <li>B) 1 ta;</li>
+                    <li>V) 2 ta;</li>
+                    <li>G) 5 ta;</li>
+                </ul>
+                <p class="correct">To'g'ri javob: A) 5 ta;</p>
+            </div>
+            
+            <div class="question">
+                <h2>100. Al Farobiy qaysi kasbni ezozlagan va shug‘ullangan?</h2>
+                <ul>
+                    <li>A) Bog‘bonlik;</li>
+                    <li>B) Kashtachilik;</li>
+                    <li>V) Etikdo‘zlik;</li>
+                    <li>G) Yog‘ochsoz;</li>
+                </ul>
+                <p class="correct">To'g'ri javob: A) Bog‘bonlik;</p>
+            </div>            
+            
+        </div>
+    </div>
+    <script>
+        // Ensure the script runs in an HTML environment
+        document.addEventListener("DOMContentLoaded", function () {
+            function filterQuestions() {
+                const searchInput = document.getElementById('search').value.toLowerCase();
+                const questions = document.querySelectorAll('.question');
+
+                questions.forEach((question) => {
+                    const text = question.textContent.toLowerCase();
+                    question.style.display = text.includes(searchInput) ? 'block' : 'none';
+                });
+            }
+
+            document.getElementById('search').addEventListener('input', filterQuestions);
+        });
+    </script>
+</body>
+</html>
